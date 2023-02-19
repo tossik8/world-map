@@ -9,7 +9,7 @@ const height = 600;
 
 
 function createMap(data){
-    const svg = d3.select("main")
+    const svg = d3.select("#svg-container")
                     .append("svg")
                     .attr("id", "svg-map")
                     .attr("width", width)
@@ -48,8 +48,8 @@ function makeTooltip(){
             document.getElementById("country-name").textContent = "Name: " + country.attributes.getNamedItem("country-name").value;
             document.getElementById("country-population").textContent = "Population: " + formatNumber(country.attributes.getNamedItem("country-population").value);
 
-            document.getElementById("tooltip").style.top = e.clientY - 30 + "px";
-            document.getElementById("tooltip").style.left = e.clientX + 20 + "px";
+            document.getElementById("tooltip").style.top = e.pageY - 30 + "px";
+            document.getElementById("tooltip").style.left = e.pageX + 20 + "px";
 
             document.getElementById("tooltip").classList.add("visible");
             document.getElementById("tooltip").classList.remove("invisible");

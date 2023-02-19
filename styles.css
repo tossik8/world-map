@@ -9,12 +9,8 @@ body{
 #title{
     font-size: 4rem;
 }
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.panel{
+    text-align: center;
 }
 #map{
     width: 99%;
@@ -32,7 +28,7 @@ main{
     position: absolute;
     pointer-events: none;
     background-color: rgb(102, 103, 171, 0.8);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.3rem;
     color: rgb(168, 168, 168)
 }
