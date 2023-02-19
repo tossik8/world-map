@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(140, 30, 48);
+    overflow: hidden;
+}
+#title{
+    font-size: 4rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#map{
+    width: 99%;
+}
+
+.country:hover{
+    fill: rgb(43, 171, 90);
+    filter: brightness(40%);
+}
+#tooltip{
+    position: absolute;
+    pointer-events: none;
+    background-color: rgb(102, 103, 171, 0.8);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    color: rgb(168, 168, 168)
+}
+#country-name{
+    margin-top: 0.5rem;
+}
+#country-population{
+    margin-bottom: 0.5rem;
+}
+.visible{
+    opacity: 1;
+}
+.invisible{
+    opacity: 0;
+}
