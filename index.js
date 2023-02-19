@@ -9,12 +9,21 @@ const height = 600;
 
 
 function createMap(data){
-    const svg = d3.select("#svg-container")
+    let svg
+    if(document.documentElement.clientWidth < 980){
+        svg = d3.select("#svg-container")
+        .append("svg")
+        .attr("id", "svg-map")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", `0 0 ${width} ${height}`);
+    }
+    else{
+        svg = d3.select("#svg-container")
                     .append("svg")
                     .attr("id", "svg-map")
-                    .attr("width", width)
+                    .attr("width",width)
                     .attr("height", height);
-
+    }
     const countries = topojson.feature(data, data.objects.countries);
     const g = svg.append("g")
                  .attr("id", "map");
