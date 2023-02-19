@@ -5,7 +5,6 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(140, 30, 48);
-    overflow: hidden;
 }
 #title{
     font-size: 4rem;
@@ -19,6 +18,10 @@ main{
 }
 #map{
     width: 99%;
+}
+
+.country{
+    stroke: rgb(45, 42, 42);
 }
 
 .country:hover{

@@ -9,7 +9,6 @@ const height = 600;
 
 
 function createMap(data){
-    console.log(data);
     const svg = d3.select("main")
                     .append("svg")
                     .attr("id", "svg-map")
@@ -47,7 +46,7 @@ function makeTooltip(){
     for(let country of countries){
         country.onmousemove = (e) => {
             document.getElementById("country-name").textContent = "Name: " + country.attributes.getNamedItem("country-name").value;
-            document.getElementById("country-population").textContent = "Population: " + country.attributes.getNamedItem("country-population").value;
+            document.getElementById("country-population").textContent = "Population: " + formatNumber(country.attributes.getNamedItem("country-population").value);
 
             document.getElementById("tooltip").style.top = e.clientY - 30 + "px";
             document.getElementById("tooltip").style.left = e.clientX + 20 + "px";
@@ -60,4 +59,16 @@ function makeTooltip(){
             document.getElementById("tooltip").classList.remove("visible");
         }
     }
+}
+
+function formatNumber(number){
+    let result = "";
+    for(let i = 1; number != 0; ++i){
+        result = number%10 + result;
+        if(i % 3 === 0 && Math.floor(number / 10) !== 0){
+            result = "," + result;
+        }
+        number = Math.floor(number/10);
+    }
+    return result;
 }
